@@ -2,7 +2,7 @@ import styles from "./Members.module.css";
 
 const Members: React.FC = () => {
   return (
-    <article className={styles.container}>
+    <article className={styles.container} id="members">
       <header className={styles.header}>
         <h2>Who is this?</h2>
       </header>

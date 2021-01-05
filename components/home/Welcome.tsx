@@ -16,7 +16,12 @@ const Welcome: React.FC = () => {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
         <Link href="/#info">
           <a>
-            <button className={styles.button}>OH YES? </button>
+            <button className={`${styles.button} ${styles.button_info}`}>WHAT</button>
+          </a>
+        </Link>
+        <Link href="/#members">
+          <a>
+            <button className={`${styles.button} ${styles.button_members}`}>WHO</button>
           </a>
         </Link>
       </section>

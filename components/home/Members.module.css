@@ -17,7 +17,8 @@
 
 .member {
   width: 25%;
-  height: 20rem;
+  max-width: 15rem;
+  height: 22rem;
   margin: 3rem 0;
   padding: 2rem;
   box-shadow: 0 0 40px -20px #0003;
@@ -28,6 +29,7 @@
 .member__image {
   border-radius: 50%;
   width: 100%;
+  margin-bottom: 0.3rem;
 }
 
 .member:hover {
@@ -35,11 +37,11 @@
 }
 
 .member__name {
-  text-align: center;
+  margin-bottom: 0;
 }
 
 .member__description {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #555;
-  text-align: center;
+  line-height: 1.3;
 }

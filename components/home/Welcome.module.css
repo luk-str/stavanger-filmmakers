@@ -35,13 +35,23 @@
 
 .button {
   background: none;
-  border: 2px solid black;
+  border: 1px solid #333;
+  /* border: none; */
   padding: 1rem 2rem;
-  margin: 1rem auto;
+  margin: 1rem 1rem 0 0;
   cursor: pointer;
   transition: 100ms ease-in-out;
+  font-weight: bold;
 }
 
 .button:hover {
-  transform: scale(0.9);
+  transform: scale(1.05);
 }
+/* 
+.button_info {
+  background: #ffe;
+}
+
+.button_members {
+  background: #efe;
+} */

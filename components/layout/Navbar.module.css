@@ -1,15 +1,24 @@
-.navbar__container {
+.navbar {
   position: sticky;
   top: 0;
   background: rgb(230, 230, 230, 0.8);
   width: 100%;
-  height: 5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
   font-size: 1rem;
   text-decoration: none;
+  margin: 2rem;
+}
+
+.nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
 }
