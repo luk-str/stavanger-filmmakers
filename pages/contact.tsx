@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Layout";
 import Head from "next/head";
 
 export const Contact: React.FC = () => {

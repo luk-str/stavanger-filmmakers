@@ -1,21 +1,16 @@
-import Head from "next/head";
-import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import Layout from "../components/layout/Layout";
+import Metadata from "../components/Metadata";
+import Welcome from "../components/home/Welcome";
+import Info from "../components/home/Info";
 
 export const Home: React.FC = () => (
   <>
-    <Head>
-      <title>Stavanger Filmmakers</title>
-    </Head>
-
+    <Metadata />
     <Layout>
-      <p>
-        {" "}
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
-        sapiente eveniet, accusantium est enim soluta nemo sequi deleniti
-        expedita architecto consequuntur exercitationem ab quis neque, ut,
-        quidem sunt harum accusamus.{" "}
-      </p>
+      <main>
+        <Welcome />
+        <Info />
+      </main>
     </Layout>
   </>
 );

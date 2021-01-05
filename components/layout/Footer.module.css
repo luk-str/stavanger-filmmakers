@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  background: #eee;
+}
+
+.content {
+  width: 80%;
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
