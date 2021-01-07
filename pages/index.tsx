@@ -1,9 +1,9 @@
 import Metadata from "../components/Metadata";
-import Intro from "../components/Intro";
-import Events from "../components/Events";
-import Films from "../components/Films";
-import Members from "../components/Members";
-import Contact from "../components/Contact";
+import Intro from "../components/Intro/Intro";
+import Events from "../components/Events/Events";
+import Films from "../components/Films/Films";
+import Members from "../components/Members/Members";
+import Contact from "../components/Contact/Contact";
 
 export const Home: React.FC = () => (
   <>
