@@ -1,11 +1,11 @@
 import styles from "./Info.module.css";
 
-const Info: React.FC = () => {
+const FullStory: React.FC = () => {
   return (
-    <article className={styles.content} id="info">
+    <article>
       <h2>What is this?</h2>
 
-      <p className={styles.text}>
+      <p>
         Stavanger Filmmakers Club was started by Leo X. Robertson, a guy who
         owned a phone and wanted to start making films. So he did. The first
         ones were made with his phone, starring only himself, but when he
@@ -24,4 +24,4 @@ const Info: React.FC = () => {
   );
 };
 
-export default Info;
+export default FullStory;

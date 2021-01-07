@@ -1,19 +1,18 @@
-import Layout from "../components/layout/Layout";
 import Metadata from "../components/Metadata";
-import Welcome from "../components/home/Welcome";
-import Info from "../components/home/Info";
-import Members from "../components/home/Members";
+import Intro from "../components/Intro";
+import Events from "../components/Events";
+import Films from "../components/Films";
+import Members from "../components/Members";
+import Contact from "../components/Contact";
 
 export const Home: React.FC = () => (
   <>
     <Metadata />
-    <Layout>
-      <main>
-        <Welcome />
-        <Info />
-        <Members />
-      </main>
-    </Layout>
+    <Intro />
+    <Events />
+    <Films />
+    <Members />
+    <Contact />
   </>
 );
 
