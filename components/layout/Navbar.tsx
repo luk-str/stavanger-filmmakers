@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   return (
     <section className={styles.navbar}>
       <Link href="/">
-        <a>
+        <a className={styles.logo__container}>
           <h1 className={styles.logo}>
             Stavanger
             <br />
