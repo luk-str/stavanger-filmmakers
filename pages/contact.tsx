@@ -8,8 +8,7 @@ export const Contact: React.FC = () => {
         <title>Contact | Stavanger Filmmakers</title>
       </Head>
       <Layout>
-        <h2>This is the contact info</h2>
-        <p>Read more of the Lorem ipsum dolor sit amet.</p>
+        <h2 style={{ minHeight: `80vh` }}>This is the contact page</h2>
       </Layout>
     </>
   );
