@@ -1,9 +1,13 @@
+import Link from "next/link";
 import styles from "./Info.module.css";
 
 const FullStory: React.FC = () => {
   return (
     <article>
-      <h2>What is this?</h2>
+      <Link href="/">
+        <a>Go back</a>
+      </Link>
+      <h1>The Full Story</h1>
 
       <p>
         Stavanger Filmmakers Club was started by Leo X. Robertson, a guy who
