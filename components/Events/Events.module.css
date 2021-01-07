@@ -7,4 +7,9 @@
 
 .list li {
   margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.list li:hover {
+  opacity: 0.8;
 }
