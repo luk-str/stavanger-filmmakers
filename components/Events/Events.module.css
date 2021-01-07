@@ -1,0 +1,10 @@
+.date {
+  display: inline-block;
+  padding: 0 2em;
+  font-size: 0.65em;
+  color: #ffb;
+}
+
+.list li {
+  margin-bottom: 1rem;
+}
