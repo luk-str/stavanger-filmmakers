@@ -45,3 +45,16 @@ export const getMembers = (): Promise<Member[]> => {
 
   return fetchFromSanity(query);
 };
+
+export const getFilmSlugs = (): Promise<{ slug: string }[]> => {
+  const query = `*[_type == "film"] {"slug": slug.current}`;
+
+  return fetchFromSanity(query);
+};
+
+export const getFilmBySlug = (slug: string): Promise<FilmItem> => {
+  const query = `*[_type == "film" && slug.current == "${slug}"]
+  { title, genre, description, castMembers, crewMembers, videoLink, externalLink, "slug": slug.current, "image" : poster, releaseDate }[0]`;
+
+  return fetchFromSanity(query);
+};
