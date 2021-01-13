@@ -11,33 +11,37 @@ const client = sanityClient({
 });
 
 const builder = imageUrlBuilder(client);
+const fetchFromSanity = async (query: string) => {
+  return client
+    .fetch(query)
+    .then((data) => data)
+    .catch((err) => console.log(err));
+};
 
-export const urlFor = (source: SanityImageSource) => builder.image(source);
-
-export const getWebsiteIntro = async (): Promise<{}> => {
+export const getWebsiteIntro = (): Promise<{}> => {
   const query = `*[_type == "websiteContent" && contentTag == "intro"].content[0]`;
 
-  return client
-    .fetch(query)
-    .then((data) => data)
-    .catch((err) => console.log(err));
+  return fetchFromSanity(query);
 };
 
-export const getFullStory = async (): Promise<{}> => {
+export const getFullStory = (): Promise<{}> => {
   const query = `*[_type == "websiteContent" && contentTag == "fullStory"].content[0]`;
 
-  return client
-    .fetch(query)
-    .then((data) => data)
-    .catch((err) => console.log(err));
+  return fetchFromSanity(query);
 };
 
-export const getThumbnails = async (): Promise<FilmItem[]> => {
+export const getThumbnails = (): Promise<FilmItem[]> => {
   const query = `*[_type == "film"] | order(releaseDate desc)
     { title, genre, "slug": slug.current, "image" : poster }`;
 
-  return client
-    .fetch(query)
-    .then((data) => data)
-    .catch((err) => console.log(err));
+  return fetchFromSanity(query);
+};
+
+export const urlFor = (source: SanityImageSource) => builder.image(source);
+
+export const getMembers = (): Promise<any> => {
+  const query = `*[_type == "person"]
+    {name, role, "slug": slug.current, image, bio}`;
+    
+  return fetchFromSanity(query);
 };

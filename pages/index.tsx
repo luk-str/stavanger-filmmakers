@@ -1,4 +1,8 @@
-import { getWebsiteIntro, getThumbnails } from "../shared/lib/sanity";
+import {
+  getWebsiteIntro,
+  getThumbnails,
+  getMembers,
+} from "../shared/lib/sanity";
 
 import Metadata from "../components/Metadata";
 import Intro from "../components/Intro/Intro";
@@ -7,21 +11,22 @@ import Films from "../components/Films/Films";
 import Members from "../components/Members/Members";
 import Contact from "../components/Contact/Contact";
 import { SanityDocument } from "@sanity/client";
-import { FilmItem } from "../shared/types";
+import { FilmItem, Member } from "../shared/types";
 
 type Props = {
   introText: SanityDocument;
   filmThumbnails: FilmItem[];
+  members: Member[];
 };
 
-export const Home = ({ introText, filmThumbnails }: Props) => {
+export const Home = ({ introText, filmThumbnails, members }: Props) => {
   return (
     <>
       <Metadata />
       <Intro text={introText} />
       <Events />
       <Films filmThumbnails={filmThumbnails} />
-      <Members />
+      <Members members={members} />
       <Contact />
     </>
   );
@@ -32,11 +37,13 @@ export default Home;
 export async function getStaticProps() {
   const introText = await getWebsiteIntro();
   const filmThumbnails = await getThumbnails();
+  const members = await getMembers();
 
   return {
     props: {
       introText,
-      filmThumbnails: filmThumbnails,
+      filmThumbnails,
+      members,
     },
     revalidate: 1,
   };

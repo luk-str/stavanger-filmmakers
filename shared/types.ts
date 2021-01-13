@@ -9,3 +9,11 @@ export type FilmItem = {
   image: SanityImageSource;
   slug: string;
 };
+
+export type Member = {
+  name: string;
+  role?: string;
+  image: SanityImageSource;
+  bio: string;
+  slug: string;
+};
