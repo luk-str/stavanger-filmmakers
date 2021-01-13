@@ -7,13 +7,11 @@ import Films from "../components/Films/Films";
 import Members from "../components/Members/Members";
 import Contact from "../components/Contact/Contact";
 
-export const Home = ({ intro }) => {
-
+export const Home = ({ introText }) => {
   return (
     <>
       <Metadata />
-      <Intro />
-      <pre>{JSON.stringify(intro)}</pre>
+      <Intro text={introText} />
       <Events />
       <Films />
       <Members />
@@ -25,11 +23,12 @@ export const Home = ({ intro }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const intro = await getWebsiteIntro();
+  const introText = await getWebsiteIntro();
 
   return {
     props: {
-      intro,
+      introText,
     },
+    revalidate: 1,
   };
 }

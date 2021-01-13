@@ -1,7 +1,8 @@
 import Link from "next/link";
+import BlockContent from "@sanity/block-content-to-react";
 import styles from "./Intro.module.css";
 
-const Intro: React.FC = () => {
+const Intro = ({ text }) => {
   return (
     <header>
       <h1>
@@ -10,14 +11,12 @@ const Intro: React.FC = () => {
         <br /> Filmmakers <br />
         Club{" "}
       </h1>
-      <p>
-        This is a quick introduction to the club. Two or three sentences to get
-        people interested.
-        <br />
-        <Link href="/fullstory">
-          <a>Here's the full story.</a>
-        </Link>
-      </p>
+
+      <BlockContent blocks={text} />
+
+      <Link href="/fullstory">
+        <a>Here's the full story.</a>
+      </Link>
     </header>
   );
 };

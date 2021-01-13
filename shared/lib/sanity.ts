@@ -12,6 +12,6 @@ export const getWebsiteIntro = async () => {
 
   return client
     .fetch(query)
-    .then((data) => data)
+    .then((data) => data[0])
     .catch((err) => console.log(err));
 };
