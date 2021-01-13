@@ -1,4 +1,4 @@
-import { getWebsiteIntro, getFilmThumbnailData } from "../shared/lib/sanity";
+import { getWebsiteIntro, getThumbnails } from "../shared/lib/sanity";
 
 import Metadata from "../components/Metadata";
 import Intro from "../components/Intro/Intro";
@@ -11,16 +11,16 @@ import { FilmItem } from "../shared/types";
 
 type Props = {
   introText: SanityDocument;
-  filmThumbnailData: FilmItem[];
+  filmThumbnails: FilmItem[];
 };
 
-export const Home = ({ introText, filmThumbnailData }: Props) => {
+export const Home = ({ introText, filmThumbnails }: Props) => {
   return (
     <>
       <Metadata />
       <Intro text={introText} />
       <Events />
-      <Films filmThumbnailData={filmThumbnailData} />
+      <Films filmThumbnails={filmThumbnails} />
       <Members />
       <Contact />
     </>
@@ -31,12 +31,12 @@ export default Home;
 
 export async function getStaticProps() {
   const introText = await getWebsiteIntro();
-  const filmThumbnailData = await getFilmThumbnailData();
+  const filmThumbnails = await getThumbnails();
 
   return {
     props: {
       introText,
-      filmThumbnailData,
+      filmThumbnails: filmThumbnails,
     },
     revalidate: 1,
   };

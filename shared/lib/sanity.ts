@@ -1,6 +1,7 @@
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { FilmItem } from "../types";
 
 const client = sanityClient({
   projectId: "buq8gsbj",
@@ -31,9 +32,7 @@ export const getFullStory = async (): Promise<{}> => {
     .catch((err) => console.log(err));
 };
 
-export const getFilmThumbnailData = async (): Promise<
-  { title: string; genre: "string"; slug: "string"; image: SanityImageSource }[]
-> => {
+export const getThumbnails = async (): Promise<FilmItem[]> => {
   const query = `*[_type == "film"] | order(releaseDate desc)
     { title, genre, "slug": slug.current, "image" : poster }`;
 

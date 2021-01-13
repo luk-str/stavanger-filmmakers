@@ -4,14 +4,14 @@ import type { FilmItem } from "../../shared/types";
 import FilmThumbnail from "./FilmThumbnail";
 
 type Props = {
-  filmThumbnailData: FilmItem[];
+  filmThumbnails: FilmItem[];
 };
 
-const Films = ({ filmThumbnailData }: Props) => {
+const Films = ({ filmThumbnails }: Props) => {
   return (
     <>
       <h2> Films </h2>
-      {filmThumbnailData.map((film) => (
+      {filmThumbnails.map((film) => (
         <FilmThumbnail film={film} key={film.slug} />
       ))}
     </>
