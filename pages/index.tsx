@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from "next";
 import {
   getWebsiteIntro,
   getThumbnails,
@@ -10,16 +11,12 @@ import Events from "../components/Events/Events";
 import Films from "../components/Films/Films";
 import Members from "../components/Members/Members";
 import Contact from "../components/Contact/Contact";
-import { SanityDocument } from "@sanity/client";
-import { FilmItem, Member } from "../shared/types";
 
-type Props = {
-  introText: SanityDocument;
-  filmThumbnails: FilmItem[];
-  members: Member[];
-};
-
-export const Home = ({ introText, filmThumbnails, members }: Props) => {
+export const Home = ({
+  introText,
+  filmThumbnails,
+  members,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Metadata />
