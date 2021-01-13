@@ -1,4 +1,4 @@
-import { getWebsiteContent } from "../shared/lib/sanity";
+import { getWebsiteIntro } from "../shared/lib/sanity";
 
 import Metadata from "../components/Metadata";
 import Intro from "../components/Intro/Intro";
@@ -7,13 +7,13 @@ import Films from "../components/Films/Films";
 import Members from "../components/Members/Members";
 import Contact from "../components/Contact/Contact";
 
-export const Home: React.FC = () => {
-  getWebsiteContent();
+export const Home = ({ intro }) => {
 
   return (
     <>
       <Metadata />
       <Intro />
+      <pre>{JSON.stringify(intro)}</pre>
       <Events />
       <Films />
       <Members />
@@ -23,3 +23,13 @@ export const Home: React.FC = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const intro = await getWebsiteIntro();
+
+  return {
+    props: {
+      intro,
+    },
+  };
+}

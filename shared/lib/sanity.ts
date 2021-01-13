@@ -7,10 +7,11 @@ const client = sanityClient({
   useCdn: true,
 });
 
-export const getWebsiteContent = async () => {
-  const query = `*[_type == "websiteContent"] { contentTag, content }`;
+export const getWebsiteIntro = async () => {
+  const query = `*[_type == "websiteContent" && contentTag == "intro"].content`;
 
-  client.fetch(query).then((data) => {
-    console.log(data);
-  });
+  return client
+    .fetch(query)
+    .then((data) => data)
+    .catch((err) => console.log(err));
 };
