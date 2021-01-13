@@ -1,6 +1,7 @@
 import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
-import { getFilmBySlug, getFilmSlugs } from "../../shared/lib/sanity";
+import { getFilmBySlug, getFilmSlugs, urlFor } from "../../shared/lib/sanity";
+import BlockContent from "@sanity/block-content-to-react";
 
 const Film = ({ film }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -9,8 +10,16 @@ const Film = ({ film }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <a>Go back</a>
       </Link>
 
+      <figure>
+        <img src={urlFor(film.image).width(500).url()} />
+      </figure>
+
       <h3>title: {film.title} </h3>
       <p>genre: {film.genre}</p>
+
+      <BlockContent blocks={film.description} />
+
+      <a href={`${film.videoLink}`}>Watch on YouTube</a>
     </>
   );
 };
