@@ -1,5 +1,6 @@
 .container {
   background: var(--background_color_2);
+  background: linear-gradient(135deg, var(--background_color_2), #13ca);
   max-width: 40rem;
   margin: 0 auto 9rem;
   padding: 3rem 2rem 1rem;
