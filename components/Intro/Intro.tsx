@@ -4,19 +4,21 @@ import styles from "./Intro.module.css";
 
 const Intro = ({ text }) => {
   return (
-    <header>
-      <h1>
+    <header className={styles.container}>
+      <h1 className={styles.title}>
         {" "}
         Stavanger
         <br /> Filmmakers <br />
         Club{" "}
       </h1>
 
-      <BlockContent blocks={text} />
+      <section className={styles.text__container}>
+        <BlockContent blocks={text} />
 
-      <Link href="/fullstory">
-        <a>Here's the full story.</a>
-      </Link>
+        <Link href="/fullstory">
+          <a className={styles.link}>Here's the full story.</a>
+        </Link>
+      </section>
     </header>
   );
 };

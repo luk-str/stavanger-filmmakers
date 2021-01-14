@@ -8,7 +8,9 @@ export const FullStoryPage = ({ fullStoryText }) => {
       <Head>
         <title>Full Story | Stavanger Filmmakers</title>
       </Head>
-      <FullStory text={fullStoryText} />
+      <main>
+        <FullStory text={fullStoryText} />
+      </main>
     </>
   );
 };

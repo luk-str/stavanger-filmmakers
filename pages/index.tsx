@@ -20,11 +20,17 @@ export const Home = ({
   return (
     <>
       <Metadata />
-      <Intro text={introText} />
-      <Events />
-      <Films filmThumbnails={filmThumbnails} />
-      <Members members={members} />
-      <Contact />
+
+      <main>
+        <Intro text={introText} />
+        <Events />
+        <Films filmThumbnails={filmThumbnails} />
+        <Members members={members} />
+      </main>
+
+      <footer>
+        <Contact />
+      </footer>
     </>
   );
 };

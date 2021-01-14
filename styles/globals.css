@@ -41,6 +41,17 @@ body {
   font-family: "SportingGrotesque";
 }
 
+main {
+  margin: 0 auto;
+  padding: 5vh 10vw 0;
+}
+
+footer {
+  margin: 0 auto;
+  padding: 5vh 10vw;
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
