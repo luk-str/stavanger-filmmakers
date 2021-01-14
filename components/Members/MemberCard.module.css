@@ -12,11 +12,13 @@
   cursor: pointer;
   text-align: left;
   flex-grow: 1;
+  transition: 100ms ease-in;
 }
 
-.container:hover {
-  transform: scale(1.05);
-  border: none;
+.container:hover,
+.container:focus {
+  transform: scale(1.03);
+  transition: 100ms;
 }
 
 .name__container {
