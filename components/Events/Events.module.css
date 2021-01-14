@@ -1,7 +1,7 @@
 .container {
   height: min(70vh, 650px);
   max-width: 40rem;
-  margin: 0 auto;
+  margin: 0 auto 7rem;
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
