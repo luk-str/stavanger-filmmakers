@@ -8,10 +8,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 .thumbnails__container {
-  max-width: 50rem;
+  max-width: 43rem;
   margin: 1rem 0;
   display: flex;
   flex-flow: row wrap;

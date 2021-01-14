@@ -43,7 +43,6 @@
 .genre {
   margin: 0;
   font-size: 0.7rem;
-  /* font-family: "HappyTimes"; */
   color: #aaa;
 }
 
@@ -53,6 +52,4 @@
   width: max(16rem, 100%);
   min-height: 100%;
   transform: translateY(-10%);
-
-  /* z-index: -1; */
 }
