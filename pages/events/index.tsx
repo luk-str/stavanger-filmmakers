@@ -6,7 +6,7 @@ export const EventPage: React.FC = () => (
     <Head>
       <title>Events | Stavanger Filmmakers</title>
     </Head>
-    <Link href="/">
+    <Link href="/#events">
       <a>Go back</a>
     </Link>
     <h1>Events Page</h1>

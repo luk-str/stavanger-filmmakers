@@ -1,12 +1,34 @@
+.container {
+  height: min(70vh, 650px);
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--background_color_2);
+  border-radius: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
 .date {
-  display: inline-block;
-  padding: 0 2em;
-  font-size: 0.65em;
+  display: block;
+  font-size: 0.8em;
+  line-height: 3;
   color: var(--accent_color);
 }
 
+.list {
+  padding: 0;
+  list-style-type: disc;
+}
+
 .list li {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   cursor: pointer;
 }
 

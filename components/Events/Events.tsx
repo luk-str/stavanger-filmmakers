@@ -3,8 +3,8 @@ import styles from "./Events.module.css";
 
 const Events: React.FC = () => {
   return (
-    <>
-      <h2> Upcoming Events </h2>
+    <section className={styles.container} id="events">
+      <h2 className={styles.header}> Upcoming Events </h2>
       <ul className={styles.list}>
         <Link href="/events">
           <li>
@@ -27,7 +27,7 @@ const Events: React.FC = () => {
           </li>
         </Link>
       </ul>
-    </>
+    </section>
   );
 };
 
