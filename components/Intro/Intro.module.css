@@ -6,9 +6,15 @@
   align-items: flex-start;
   justify-content: center;
 }
+.link {
+  color: var(--accent_color);
+}
+
+/* 
 .title {
 }
-.link {
-}
+
 .text__container p {
 }
+
+ */
