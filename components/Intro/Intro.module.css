@@ -1,20 +1,20 @@
 .container {
-  min-height: 90vh;
-  margin-bottom: 2rem;
+  min-height: min(90vh, 55rem);
+  max-width: 50rem;
+  margin: 0 auto;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
 }
 .link {
   color: var(--accent_color);
 }
 
-/* 
 .title {
+  padding: 5% 0;
 }
 
+/* 
 .text__container p {
-}
-
- */
+} */
