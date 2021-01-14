@@ -1,10 +1,10 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import { extractYoutubeId } from "../../shared/lib/video";
-import { urlFor } from "../../shared/lib/sanity";
 import styles from "./FilmPage.module.css";
+import type { FilmItem } from "../../shared/types";
 
-const FilmPage = ({ film }) => {
+const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
     <>
       <Link href="/">
