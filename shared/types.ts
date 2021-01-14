@@ -18,6 +18,6 @@ export type Member = {
   name: string;
   role?: string;
   image: SanityImageSource;
-  bio: string;
+  bio: SanityDocument;
   slug: string;
 };
