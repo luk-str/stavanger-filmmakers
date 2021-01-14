@@ -1,27 +1,18 @@
+import Metadata from "../../components/Metadata";
+import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
-import Link from "next/link";
-import {
-  getMemberSlugs,
-  getMemberBySlug,
-  urlFor,
-} from "../../shared/lib/sanity";
-import BlockContent from "@sanity/block-content-to-react";
+import { getMemberSlugs, getMemberBySlug } from "../../shared/lib/sanity";
+import MemberPage from "../../components/Members/MemberPage";
 
 const Member = ({ member }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Link href="/">
-        <a>Go back</a>
-      </Link>
+      <Metadata />
+      <Head>
+        <title>{member.name} | Stavanger Filmmakers</title>
+      </Head>
 
-      <figure>
-        <img src={urlFor(member.image).width(300).url()} />
-      </figure>
-
-      <h3>name: {member.name}</h3>
-      <p> role: {member.role}</p>
-      <p> bio:</p>
-      <BlockContent blocks={member.bio} />
+      <MemberPage member={member} />
     </>
   );
 };
