@@ -12,7 +12,7 @@ const MemberCard = ({ member }: Props) => {
     <Link href={`/members/${member.slug}`}>
       <button className={styles.container}>
         <img
-          src={urlFor(member.image).width(300).saturation(-100).url()}
+          src={urlFor(member.image).width(700).saturation(-100).url()}
           className={styles.image}
         />
         <div className={styles.name__container}>

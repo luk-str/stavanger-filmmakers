@@ -1,9 +1,9 @@
 .container {
   position: relative;
-  height: 18rem;
-  width: 12rem;
+  height: 15rem;
+  min-width: 12rem;
   border: none;
-  margin: 1rem;
+  margin: 0.8rem;
   padding: 0;
   color: #333;
   background: none;
@@ -11,6 +11,7 @@
   overflow: hidden;
   cursor: pointer;
   text-align: left;
+  flex-grow: 1;
 }
 
 .container:hover {
@@ -44,11 +45,11 @@
 
 .image {
   position: absolute;
+  width: max(15rem, 100%);
   min-height: 100%;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -0);
-  z-index: -1;
+  transform: translate(-50%, -50%);
 }
 
 .image:hover {

@@ -8,11 +8,13 @@ type Props = {
 
 const Members = ({ members }: Props) => {
   return (
-    <article>
-      <h1> Members </h1>
-      {members.map((member) => (
-        <MemberCard member={member} key={member.slug} />
-      ))}
+    <article className={styles.container}>
+      <h1 className={styles.header}> Members </h1>
+      <section className={styles.cards__container}>
+        {members.map((member) => (
+          <MemberCard member={member} key={member.slug} />
+        ))}
+      </section>
     </article>
   );
 };

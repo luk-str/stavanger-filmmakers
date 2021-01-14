@@ -1,0 +1,15 @@
+.container {
+  margin: 0 auto 5rem;
+  max-width: 50rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.cards__container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
