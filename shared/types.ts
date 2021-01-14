@@ -1,6 +1,5 @@
 import { SanityDocument } from "@sanity/client";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { Url } from "url";
 
 export type FilmItem = {
   title: string;
