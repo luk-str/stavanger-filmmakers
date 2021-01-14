@@ -1,7 +1,7 @@
 .container {
   background: var(--background_color_2);
   max-width: 40rem;
-  margin: 0 auto 7rem;
+  margin: 0 auto 9rem;
   padding: 3rem 2rem 1rem;
   display: flex;
   flex-direction: column;
