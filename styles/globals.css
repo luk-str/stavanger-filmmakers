@@ -51,6 +51,7 @@ body {
 main {
   margin: 0 auto;
   padding: 5vh 10vw 0;
+  overflow-x: hidden;
 }
 
 footer {

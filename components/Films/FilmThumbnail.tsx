@@ -11,15 +11,14 @@ const FilmThumbnail = ({ film }: Props) => {
   return (
     <Link href={`/films/${film.slug}`}>
       <button className={styles.container}>
+        <img
+          src={urlFor(film.image).width(600).url()}
+          className={styles.thumbnail}
+        />
         <div className={styles.title__container}>
           <h3 className={styles.title}> {film.title} </h3>
           <p className={styles.genre}>{film.genre}</p>
         </div>
-
-        <img
-          src={urlFor(film.image).width(250).url()}
-          className={styles.thumbnail}
-        />
       </button>
     </Link>
   );

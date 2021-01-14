@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 16rem;
+  min-width: 16rem;
   height: 9rem;
   border: none;
   margin: 1rem;
@@ -11,11 +11,14 @@
   overflow: hidden;
   cursor: pointer;
   text-align: left;
-  /* display: flex; */
+  flex-grow: 1;
+  transition: 100ms ease-in;
 }
 
-.container:hover {
-  transform: scale(1.05);
+.container:hover,
+.container:focus {
+  transform: scale(1.03);
+  transition: 100ms;
 }
 
 .title__container {
@@ -23,12 +26,13 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#00f3, #00fa, #00fc, #000f, #000f);
+  background: linear-gradient(#00f3, #00fa, #00fc, #010101, #050505);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   padding: 1rem 1.5rem;
+  box-shadow: inset 0 0 2px 1.5px #fff1;
 }
 
 .title {
@@ -45,8 +49,10 @@
 
 .thumbnail {
   position: absolute;
-  top: 0;
+  top: 0%;
   width: max(16rem, 100%);
   min-height: 100%;
-  z-index: -1;
+  transform: translateY(-10%);
+
+  /* z-index: -1; */
 }

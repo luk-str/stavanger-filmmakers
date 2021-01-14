@@ -1,0 +1,18 @@
+.container__main {
+  background-color: #000;
+  position: relative;
+  width: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnails__container {
+  max-width: 50rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+}
