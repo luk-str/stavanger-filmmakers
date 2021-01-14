@@ -48,6 +48,13 @@ h4,
 h5,
 h6 {
   font-family: "SportingGrotesque-Bold";
+  line-height: 1.3em;
+}
+
+p,
+a {
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
 a {
