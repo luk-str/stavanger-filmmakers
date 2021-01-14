@@ -8,8 +8,8 @@ export type FilmItem = {
   description?: SanityDocument;
   castMembers?: SanityDocument[];
   crewMembers?: SanityDocument[];
-  videoLink?: Url;
-  externalLink?: Url;
+  videoLink?: string;
+  externalLink?: string;
   image: SanityImageSource;
   slug: string;
   releaseDate: Date;
