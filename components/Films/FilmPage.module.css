@@ -19,7 +19,7 @@
 }
 
 .link {
-  color: #59f;
+  color: var(--accent_color_2);
   transition: 200ms;
   display: block;
   padding: 2em 10vw 0;
