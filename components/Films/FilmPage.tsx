@@ -7,7 +7,7 @@ import type { FilmItem } from "../../shared/types";
 const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
     <main>
-      <Link href="/">
+      <Link href="/#films">
         <a>Go back</a>
       </Link>
 

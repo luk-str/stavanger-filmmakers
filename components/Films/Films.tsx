@@ -9,7 +9,7 @@ type Props = {
 
 const Films = ({ filmThumbnails }: Props) => {
   return (
-    <article className={styles.container__main}>
+    <article className={styles.container__main} id="films">
       <h2 className={styles.header}> Films </h2>
       <section className={styles.thumbnails__container}>
         {filmThumbnails.map((film) => (

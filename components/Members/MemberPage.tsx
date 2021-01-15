@@ -7,7 +7,7 @@ import type { Member } from "../../shared/types";
 const MemberPage = ({ member }: { member: Member }) => {
   return (
     <main>
-      <Link href="/">
+      <Link href="/#members">
         <a>Go back</a>
       </Link>
 
