@@ -1,11 +1,8 @@
 import styles from "./Contact.module.css";
 import { FiMail, FiPhone } from "react-icons/fi";
+import type { ContactInfo } from "../../shared/types";
 
-type Props = {
-  contactInfo: { header: string; mail: string; phone: string };
-};
-
-const Contact = ({ contactInfo }: Props) => {
+const Contact = ({ contactInfo }: { contactInfo: ContactInfo }) => {
   return (
     <footer>
       <h4 className={styles.header}>{contactInfo.header}</h4>

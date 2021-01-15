@@ -1,7 +1,7 @@
 import sanityClient, { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { FilmItem, Member } from "../types";
+import { FilmItem, Member, ContactInfo } from "../types";
 
 const client = sanityClient({
   projectId: "buq8gsbj",
@@ -28,14 +28,15 @@ export const getFullStory = (): Promise<SanityDocument> => {
   return fetchFromSanity(query);
 };
 
-export const getContactInfo = async (): Promise<{}> => {
+export const getContactInfo = async (): Promise<ContactInfo> => {
   const query = `*[_type == "contactInfo"]{contentTag, content}`;
   const data = await fetchFromSanity(query);
-  const result = {};
-
-  data.forEach((item) => (result[item.contentTag] = item.content));
-
-  return result;
+  let result = {};
+  data.forEach(
+    (item: { contentTag: string; content: string }) =>
+      (result[item.contentTag] = item.content)
+  );
+  return result as ContactInfo;
 };
 
 export const getThumbnails = (): Promise<FilmItem[]> => {

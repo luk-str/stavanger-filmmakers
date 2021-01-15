@@ -21,3 +21,9 @@ export type Member = {
   bio: SanityDocument;
   slug: string;
 };
+
+export type ContactInfo = {
+  header: string;
+  mail: string;
+  phone: string;
+};
