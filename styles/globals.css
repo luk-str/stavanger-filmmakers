@@ -55,9 +55,12 @@ main {
 }
 
 footer {
-  margin: 0 auto;
-  padding: 5vh 10vw;
   text-align: center;
+  width: 100%;
+  padding: 2rem 10vw;
+  background-color: var(--background_color_2);
+  background-color: var(--accent_color);
+  color: var(--background_color);
 }
 
 h1,
