@@ -14,7 +14,8 @@
     "axios": "^0.21.1",
     "next": "10.0.4",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-icons": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.16",
