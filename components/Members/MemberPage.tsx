@@ -3,12 +3,16 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import { urlFor } from "../../shared/lib/sanity";
 import type { Member } from "../../shared/types";
+import { FiCornerDownLeft } from "react-icons/fi";
 
 const MemberPage = ({ member }: { member: Member }) => {
   return (
     <main>
       <Link href="/#members">
-        <a>Go back</a>
+        <a className={styles.link}>
+          <FiCornerDownLeft className={styles.icon__back} />
+          Go Back
+        </a>
       </Link>
 
       <article className={styles.container__main}>

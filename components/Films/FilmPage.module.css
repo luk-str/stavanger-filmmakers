@@ -17,3 +17,20 @@
 .container__main {
   min-height: 73vh;
 }
+
+.link {
+  color: var(--accent_color);
+  transition: 200ms;
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+}
+
+.icon__back {
+  position: relative;
+  top: 0.3rem;
+  font-size: 1.15rem;
+  margin-right: 0.5rem;
+}

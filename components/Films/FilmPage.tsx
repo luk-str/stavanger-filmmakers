@@ -3,12 +3,16 @@ import Link from "next/link";
 import { extractYoutubeId } from "../../shared/lib/video";
 import styles from "./FilmPage.module.css";
 import type { FilmItem } from "../../shared/types";
+import { FiCornerDownLeft } from "react-icons/fi";
 
 const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
     <main>
       <Link href="/#films">
-        <a>Go back</a>
+        <a className={styles.link}>
+          <FiCornerDownLeft className={styles.icon__back} />
+          Go Back
+        </a>
       </Link>
 
       <article className={styles.container__main}>
