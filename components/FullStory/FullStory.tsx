@@ -1,10 +1,10 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
-import styles from "./Info.module.css";
+import styles from "./FullStory.module.css";
 
 const FullStory = ({ text }) => {
   return (
-    <article>
+    <article className={styles.container}>
       <Link href="/">
         <a>Go back</a>
       </Link>

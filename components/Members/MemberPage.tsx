@@ -6,20 +6,22 @@ import type { Member } from "../../shared/types";
 
 const MemberPage = ({ member }: { member: Member }) => {
   return (
-    <>
+    <main>
       <Link href="/">
         <a>Go back</a>
       </Link>
 
-      <figure>
-        <img src={urlFor(member.image).width(300).url()} />
-      </figure>
+      <article className={styles.container__main}>
+        <figure>
+          <img src={urlFor(member.image).width(300).url()} />
+        </figure>
 
-      <h3>name: {member.name}</h3>
-      <p> role: {member.role}</p>
-      <p> bio:</p>
-      <BlockContent blocks={member.bio} />
-    </>
+        <h3>name: {member.name}</h3>
+        <p> role: {member.role}</p>
+        <p> bio:</p>
+        <BlockContent blocks={member.bio} />
+      </article>
+    </main>
   );
 };
 
