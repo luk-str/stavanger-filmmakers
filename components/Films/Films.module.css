@@ -17,3 +17,7 @@
   display: flex;
   flex-flow: row wrap;
 }
+
+.header {
+  text-shadow: 0 0 10px #fff7;
+}
