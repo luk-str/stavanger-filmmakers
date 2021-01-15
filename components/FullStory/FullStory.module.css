@@ -1,3 +1,25 @@
 .container {
-    min-height: 78vh;
+  min-height: 76vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.link {
+  color: var(--accent_color_2);
+  transition: 200ms;
+  display: block;
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+}
+
+.icon__back {
+  position: relative;
+  top: 0.3rem;
+  font-size: 1.15rem;
+  margin-right: 0.5rem;
 }
