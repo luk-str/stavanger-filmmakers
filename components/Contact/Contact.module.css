@@ -1,4 +1,27 @@
+.link__container {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0.4em 0;
+}
+
 .link {
-  /* display: block; */
-  padding: 1rem 0;
+  text-decoration: none;
+  transition: 100ms ease;
+}
+
+.link:hover,
+.link:focus {
+  opacity: 0.8;
+}
+
+.icon {
+  position: relative;
+  top: 0.3rem;
+  font-size: 1.15rem;
+  margin-right: 0.5rem;
+}
+
+.header {
+  /* margin: 1em 0; */
 }

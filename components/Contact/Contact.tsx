@@ -1,9 +1,13 @@
 import styles from "./Contact.module.css";
+import { FiMail, FiPhone } from "react-icons/fi";
 
 const Contact: React.FC = () => {
   return (
     <footer>
-      <p>
+      <h4 className={styles.header}>Get in touch!</h4>
+
+      <p className={styles.link__container}>
+        <FiMail className={styles.icon} />
         <a
           href="mailto:stavangerfilmmakers@gmail.com"
           title="E-mail Stavanger Filmmakers Club"
@@ -12,7 +16,9 @@ const Contact: React.FC = () => {
           stavangerfilmmakers@gmail.com
         </a>
       </p>
-      <p>
+
+      <p className={styles.link__container}>
+        <FiPhone className={styles.icon} />
         <a
           href="tel:+4790286691"
           title="Call Leo"

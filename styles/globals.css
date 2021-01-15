@@ -55,7 +55,6 @@ main {
 }
 
 footer {
-  text-align: center;
   width: 100%;
   padding: 2rem 10vw;
   background-color: var(--background_color_2);
