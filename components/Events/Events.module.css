@@ -27,6 +27,10 @@
   list-style-type: disc;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .list li {
   margin-bottom: 2rem;
   cursor: pointer;
