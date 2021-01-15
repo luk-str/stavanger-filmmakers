@@ -7,7 +7,19 @@ import { FiCornerDownLeft } from "react-icons/fi";
 
 const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
-    <main>
+    <>
+      <section className={styles.videoContainer}>
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${extractYoutubeId(
+            film.videoLink
+          )}?rel=0&modestbranding=1&showinfo=0&color=white`}
+          frameBorder="0"
+          allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className={styles.video}
+        ></iframe>
+      </section>
+
       <Link href="/#films">
         <a className={styles.link}>
           <FiCornerDownLeft className={styles.icon__back} />
@@ -15,25 +27,22 @@ const FilmPage = ({ film }: { film: FilmItem }) => {
         </a>
       </Link>
 
-      <article className={styles.container__main}>
-        <section className={styles.videoContainer}>
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${extractYoutubeId(
-              film.videoLink
-            )}?rel=0&modestbranding=1&showinfo=0&color=white`}
-            frameBorder="0"
-            allow="autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className={styles.video}
-          ></iframe>
-        </section>
+      <main className={styles.container__main}>
+        <article>
+          <h1 className={styles.title}>{film.title}</h1>
+          <h2 className={styles.genre}>
+            {film.genre}
+            <span className={styles.date}>
+              {new Date(film.releaseDate).getFullYear()}
+            </span>
+          </h2>
 
-        <h3>title: {film.title} </h3>
-        <p>genre: {film.genre}</p>
-
-        <BlockContent blocks={film.description} />
-      </article>
-    </main>
+          <section className={styles.description}>
+            <BlockContent blocks={film.description} />
+          </section>
+        </article>
+      </main>
+    </>
   );
 };
 
