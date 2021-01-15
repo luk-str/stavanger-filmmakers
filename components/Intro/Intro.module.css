@@ -1,5 +1,5 @@
 .container {
-  min-height: min(90vh, 55rem);
+  min-height: min(90vh, 50rem);
   max-width: 50rem;
   margin: 0 auto;
   padding-bottom: 5rem;
@@ -7,14 +7,13 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .link {
   color: var(--accent_color);
+  transition: 200ms;
 }
 
-.title {
-  padding: 5% 0;
+.link:hover,
+.link:focus {
+  opacity: 0.8;
 }
-
-/* 
-.text__container p {
-} */
