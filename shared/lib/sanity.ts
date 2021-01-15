@@ -28,6 +28,16 @@ export const getFullStory = (): Promise<SanityDocument> => {
   return fetchFromSanity(query);
 };
 
+export const getContactInfo = async (): Promise<{}> => {
+  const query = `*[_type == "contactInfo"]{contentTag, content}`;
+  const data = await fetchFromSanity(query);
+  const result = {};
+
+  data.forEach((item) => (result[item.contentTag] = item.content));
+
+  return result;
+};
+
 export const getThumbnails = (): Promise<FilmItem[]> => {
   const query = `*[_type == "film"] | order(releaseDate desc) { title, genre, "slug": slug.current, "image" : poster }`;
   return fetchFromSanity(query);

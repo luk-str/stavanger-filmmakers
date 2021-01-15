@@ -1,30 +1,34 @@
 import styles from "./Contact.module.css";
 import { FiMail, FiPhone } from "react-icons/fi";
 
-const Contact: React.FC = () => {
+type Props = {
+  contactInfo: { header: string; mail: string; phone: string };
+};
+
+const Contact = ({ contactInfo }: Props) => {
   return (
     <footer>
-      <h4 className={styles.header}>Get in touch!</h4>
+      <h4 className={styles.header}>{contactInfo.header}</h4>
 
       <p className={styles.link__container}>
         <FiMail className={styles.icon} />
         <a
-          href="mailto:stavangerfilmmakers@gmail.com"
+          href={`mailto:${contactInfo.mail}`}
           title="E-mail Stavanger Filmmakers Club"
           className={`${styles.link} ${styles.link__email}`}
         >
-          stavangerfilmmakers@gmail.com
+          {contactInfo.mail}
         </a>
       </p>
 
       <p className={styles.link__container}>
         <FiPhone className={styles.icon} />
         <a
-          href="tel:+4790286691"
-          title="Call Leo"
+          href={`tel:${contactInfo.phone}`}
+          title="Call Stavanger Filmmmakers Club"
           className={`${styles.link} ${styles.link__phone}`}
         >
-          +4790286691
+          {contactInfo.phone}
         </a>
       </p>
     </footer>
