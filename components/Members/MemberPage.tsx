@@ -15,15 +15,20 @@ const MemberPage = ({ member }: { member: Member }) => {
         </a>
       </Link>
 
-      <article className={styles.container__main}>
-        <figure>
-          <img src={urlFor(member.image).width(300).url()} />
-        </figure>
+      <article className={styles.main__container}>
+        <img
+          src={urlFor(member.image).width(300).url()}
+          width="300"
+          height="300"
+          className={styles.image}
+        />
 
-        <h3>name: {member.name}</h3>
-        <p> role: {member.role}</p>
-        <p> bio:</p>
-        <BlockContent blocks={member.bio} />
+        <h1 className={styles.name}>{member.name}</h1>
+        <h2 className={styles.role}>{member.role}</h2>
+
+        <section className={styles.bio}>
+          <BlockContent blocks={member.bio} />
+        </section>
       </article>
     </main>
   );
