@@ -28,9 +28,7 @@ export const Home = ({
         <Members members={members} />
       </main>
 
-      <footer>
         <Contact />
-      </footer>
     </>
   );
 };

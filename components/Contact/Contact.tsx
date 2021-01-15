@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 
 const Contact: React.FC = () => {
   return (
-    <>
+    <footer>
       <p>
         <a
           href="mailto:stavangerfilmmakers@gmail.com"
@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
           +4790286691
         </a>
       </p>
-    </>
+    </footer>
   );
 };
 
