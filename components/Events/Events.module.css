@@ -1,5 +1,4 @@
 .container {
-  background: var(--background_color_2);
   background: linear-gradient(135deg, var(--background_color_2), #13ca);
   max-width: 40rem;
   margin: 0 auto 9rem;
@@ -9,6 +8,7 @@
   align-items: center;
   justify-content: space-around;
   border-radius: 20px;
+  transition: 200ms ease;
 }
 
 .header {
