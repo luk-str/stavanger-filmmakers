@@ -16,7 +16,7 @@ const Contact = ({ contactInfo }: { contactInfo: ContactInfo }) => {
           rel="noreferrer noopener"
         >
           <FiFacebook className={styles.icon} />
-          Facebook group
+          facebook group
         </a>
       </p>
       <p className={styles.link__container}>
