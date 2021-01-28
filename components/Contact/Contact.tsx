@@ -12,6 +12,8 @@ const Contact = ({ contactInfo }: { contactInfo: ContactInfo }) => {
           href="https://www.facebook.com/groups/StavangerFilmmakers"
           title="Stavanger Filmmakers Club Facebook Group"
           className={`${styles.link} ${styles.link__email}`}
+          target="blank"
+          rel="noreferrer noopener"
         >
           <FiFacebook className={styles.icon} />
           Facebook group
