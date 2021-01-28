@@ -3,13 +3,20 @@
   max-width: 50rem;
 }
 
-.header {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
 .cards__container {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+}
+
+.header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  color: var(--accent_color_2);
+  margin-top: 0;
+  margin-bottom: 3rem;
 }

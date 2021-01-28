@@ -9,7 +9,7 @@ export const EventPage: React.FC = () => (
     <Link href="/#events">
       <a>Go back</a>
     </Link>
-    <h1>Events Page</h1>
+    <h1>This will be the events page 😊</h1>
   </>
 );
 
