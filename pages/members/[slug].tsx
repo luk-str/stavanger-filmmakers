@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
   const member = await getMemberBySlug(params.slug);
   const contactInfo = await getContactInfo();
 
-  return { props: { member, contactInfo }, revalidate: 1 };
+  return { props: { member, contactInfo }, revalidate: 5 };
 }
 
 export default Member;
