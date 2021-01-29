@@ -1,11 +1,18 @@
 import Metadata from "../../components/Metadata";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
-import { getMemberSlugs, getMemberBySlug, getContactInfo } from "../../shared/lib/sanity";
+import {
+  getMemberSlugs,
+  getMemberBySlug,
+  getContactInfo,
+} from "../../shared/lib/sanity";
 import MemberPage from "../../components/Members/MemberPage";
 import Contact from "../../components/Contact/Contact";
 
-const Member = ({ member, contactInfo }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Member = ({
+  member,
+  contactInfo,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Metadata />
@@ -14,7 +21,7 @@ const Member = ({ member, contactInfo }: InferGetStaticPropsType<typeof getStati
       </Head>
 
       <MemberPage member={member} />
-      <Contact contactInfo={contactInfo}/>
+      <Contact contactInfo={contactInfo} />
     </>
   );
 };
@@ -26,14 +33,14 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
   const member = await getMemberBySlug(params.slug);
   const contactInfo = await getContactInfo();
 
-  return { props: { member, contactInfo } };
+  return { props: { member, contactInfo }, revalidate: 1 };
 }
 
 export default Member;
