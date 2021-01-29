@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
   const film = await getFilmBySlug(params.slug);
   const contactInfo = await getContactInfo();
 
-  return { props: { film, contactInfo } };
+  return { props: { film, contactInfo }, revalidate: 1 };
 }
 
 export default Film;
