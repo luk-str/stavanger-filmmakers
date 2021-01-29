@@ -17,11 +17,12 @@ const Film = ({
     <>
       <Metadata />
       <Head>
-        <title>{film.title} | Stavanger Filmmakers</title>
+        <title>{film?.title} | Stavanger Filmmakers</title>
       </Head>
-      <FilmPage film={film} />
 
-      <Contact contactInfo={contactInfo} />
+      {film && <FilmPage film={film} />}
+
+      {contactInfo && <Contact contactInfo={contactInfo} />}
     </>
   );
 };
@@ -33,14 +34,20 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: true };
+  return {
+    paths,
+    fallback: true,
+  };
 }
 
 export async function getStaticProps({ params }) {
   const film = await getFilmBySlug(params.slug);
   const contactInfo = await getContactInfo();
 
-  return { props: { film, contactInfo }, revalidate: 5 };
+  return {
+    props: { film, contactInfo },
+    revalidate: 5,
+  };
 }
 
 export default Film;

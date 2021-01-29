@@ -17,11 +17,12 @@ const Member = ({
     <>
       <Metadata />
       <Head>
-        <title>{member.name} | Stavanger Filmmakers</title>
+        <title>{member?.name} | Stavanger Filmmakers</title>
       </Head>
 
-      <MemberPage member={member} />
-      <Contact contactInfo={contactInfo} />
+      {member && <MemberPage member={member} />}
+
+      {contactInfo && <Contact contactInfo={contactInfo} />}
     </>
   );
 };
@@ -33,14 +34,20 @@ export async function getStaticPaths() {
     params: { slug: item.slug },
   }));
 
-  return { paths, fallback: true };
+  return {
+    paths,
+    fallback: true,
+  };
 }
 
 export async function getStaticProps({ params }) {
   const member = await getMemberBySlug(params.slug);
   const contactInfo = await getContactInfo();
 
-  return { props: { member, contactInfo }, revalidate: 5 };
+  return {
+    props: { member, contactInfo },
+    revalidate: 1,
+  };
 }
 
 export default Member;
