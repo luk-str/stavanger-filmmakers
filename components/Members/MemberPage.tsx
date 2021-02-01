@@ -17,7 +17,7 @@ const MemberPage = ({ member }: { member: Member }) => {
 
       <article className={styles.main__container}>
         <img
-          src={urlFor(member.image).width(300).url()}
+          src={urlFor(member.image).width(300).height(300).url()}
           width="300"
           height="300"
           className={styles.image}
