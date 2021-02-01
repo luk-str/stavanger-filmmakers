@@ -26,7 +26,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#05f5, #03da, #20bc, #010101, #050505);
+  background: linear-gradient(#05fc, #03d7, #105a, #010101, #050505);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
