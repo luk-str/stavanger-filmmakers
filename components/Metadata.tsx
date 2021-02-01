@@ -9,12 +9,6 @@ const Metadata: React.FC = () => {
 
       <link
         rel="preload"
-        href="/fonts/happy-times/happy-times-NG_italic_master_web.woff2"
-        as="font"
-        crossOrigin=""
-      />
-      <link
-        rel="preload"
         href="/fonts/sporting-grotesque/Sporting_Grotesque-Regular_web.woff2"
         as="font"
         crossOrigin=""

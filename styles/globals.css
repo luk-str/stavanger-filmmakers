@@ -1,12 +1,4 @@
 @font-face {
-  font-family: "HappyTimes";
-  src: url("/fonts/happy-times/happy-times-NG_italic_master_web.woff2");
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "SportingGrotesque";
   src: url("/fonts/sporting-grotesque/Sporting_Grotesque-Regular_web.woff2");
   font-style: normal;
