@@ -1,6 +1,6 @@
 # Stavanger Filmmakers Club
 
-👨‍💻 _This is a work in progress_
+🛠 _work in progress_ 🛠
 
 This is a repo containing the front-end of a small website for a local filmmaking club in Stavanger, Norway.
 
