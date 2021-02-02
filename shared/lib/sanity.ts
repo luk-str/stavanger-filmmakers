@@ -67,6 +67,6 @@ export const getMemberSlugs = (): Promise<{ slug: string }[]> => {
 };
 
 export const getMemberBySlug = (slug: string): Promise<Member> => {
-  const query = `*[_type == "person" && slug.current == "${slug}"] { name, role, bio, link, image }[0]`;
+  const query = `*[_type == "person" && slug.current == "${slug}"] { name, role, bio, image, "links": links[]{websiteName, url} }[0]`;
   return fetchFromSanity(query);
 };
