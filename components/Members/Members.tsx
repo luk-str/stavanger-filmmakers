@@ -9,7 +9,7 @@ type Props = {
 const Members = ({ members }: Props) => {
   return (
     <article className={styles.container} id="members">
-      <h1 className={styles.header}> Members </h1>
+      <h2 className={styles.header}> Members </h2>
       <p className={styles.description}>Say hello to the crew</p>
       <section className={styles.cards__container}>
         {members.map((member) => (
