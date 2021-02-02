@@ -48,3 +48,15 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.links__container {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.links__item {
+  display: block;
+  /* margin: 0 1rem; */
+}
