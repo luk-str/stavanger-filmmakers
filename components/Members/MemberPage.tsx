@@ -21,6 +21,7 @@ const MemberPage = ({ member }: { member: Member }) => {
           width="300"
           height="300"
           className={styles.image}
+          alt={`Portrait photograph of ${member.name}`}
         />
 
         <h1 className={styles.name}>{member.name}</h1>

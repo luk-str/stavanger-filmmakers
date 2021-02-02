@@ -14,6 +14,7 @@ const FilmThumbnail = ({ film }: Props) => {
         <img
           src={urlFor(film.image).width(600).url()}
           className={styles.thumbnail}
+          alt={`Poster for the film ${film.title}`}
         />
         <div className={styles.title__container}>
           <h3 className={styles.title}> {film.title} </h3>

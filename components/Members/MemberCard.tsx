@@ -18,6 +18,7 @@ const MemberCard = ({ member }: Props) => {
             .saturation(-100)
             .url()}
           className={styles.image}
+          alt={`Portrait photograph of ${member.name}`}
         />
         <div className={styles.name__container}>
           <h3 className={styles.name}> {member.name} </h3>
