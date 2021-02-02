@@ -47,7 +47,7 @@ export const getThumbnails = (): Promise<FilmItem[]> => {
 export const urlFor = (source: SanityImageSource) => builder.image(source);
 
 export const getMembers = (): Promise<Member[]> => {
-  const query = `*[_type == "person"] { name, role, "slug": slug.current, image, bio }`;
+  const query = `*[_type == "person"] { name, role, "slug": slug.current, image, bio } | order(_createdAt asc)`;
   return fetchFromSanity(query);
 };
 
