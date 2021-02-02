@@ -20,6 +20,7 @@ export type Member = {
   image: SanityImageSource;
   bio: SanityDocument;
   slug: string;
+  links: { websiteName: string; url: string }[];
 };
 
 export type ContactInfo = {
