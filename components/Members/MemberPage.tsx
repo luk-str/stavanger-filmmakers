@@ -3,44 +3,36 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import { urlFor } from "../../shared/lib/sanity";
 import type { Member } from "../../shared/types";
+import { FiCornerDownLeft, FiInstagram, FiLink } from "react-icons/fi";
 import {
-  FiCornerDownLeft,
-  FiExternalLink,
-  FiFacebook,
-  FiInstagram,
-  FiYoutube,
-} from "react-icons/fi";
-import { SiImdb, SiLinkedin, SiSpotify, SiTwitter } from "react-icons/si";
+  SiFacebook,
+  SiImdb,
+  SiLinkedin,
+  SiSpotify,
+  SiTwitter,
+  SiYoutube,
+} from "react-icons/si";
 
 const MemberPage = ({ member }: { member: Member }) => {
   function getIconForLink(websiteName: string): JSX.Element {
-    let icon = <FiExternalLink />;
-
     switch (websiteName) {
       case "imdb":
-        icon = <SiImdb />;
-        break;
+        return <SiImdb />;
       case "youtube":
-        icon = <FiYoutube />;
-        break;
+        return <SiYoutube />;
       case "spotify":
-        icon = <SiSpotify />;
-        break;
+        return <SiSpotify />;
       case "linkedin":
-        icon = <SiLinkedin />;
-        break;
+        return <SiLinkedin />;
       case "instagram":
-        icon = <FiInstagram />;
-        break;
+        return <FiInstagram />;
       case "facebook":
-        icon = <FiFacebook />;
-        break;
+        return <SiFacebook />;
       case "twitter":
-        icon = <SiTwitter />;
-        break;
+        return <SiTwitter />;
+      default:
+        return <FiLink />;
     }
-
-    return icon;
   }
 
   return (
@@ -68,20 +60,26 @@ const MemberPage = ({ member }: { member: Member }) => {
           <BlockContent blocks={member.bio} />
         </section>
 
-        {/* <ul className={styles.links__container}>
-          {member.links.map((link, index) => (
-            <li key={index} className={styles.links__item}>
-              <a
-                href={link.url}
-                title={`Link to ${member.name}'s ${link.websiteName}. Opens in new tab`}
-                rel="noreferrer noopener"
-                target="blank"
-              >
-                {getIconForLink(link.websiteName)}
-              </a>
-            </li>
-          ))}
-        </ul> */}
+        {member.links && (
+          <section>
+            <h3 className={styles.links__header}>other websites</h3>
+
+            <ul className={styles.links__container}>
+              {member.links.map((link, index) => (
+                <li key={index} className={styles.links__item}>
+                  <a
+                    href={link.url}
+                    title={`Link to ${member.name}'s ${link.websiteName}. Opens in new tab`}
+                    rel="noreferrer noopener"
+                    target="blank"
+                  >
+                    {getIconForLink(link.websiteName)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </article>
     </main>
   );
