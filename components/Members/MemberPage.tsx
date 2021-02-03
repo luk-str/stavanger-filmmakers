@@ -10,6 +10,7 @@ import {
   SiLinkedin,
   SiSpotify,
   SiTwitter,
+  SiVimeo,
   SiYoutube,
 } from "react-icons/si";
 
@@ -30,6 +31,8 @@ const MemberPage = ({ member }: { member: Member }) => {
         return <SiFacebook />;
       case "twitter":
         return <SiTwitter />;
+      case "vimeo":
+        return <SiVimeo />;
       default:
         return <FiLink />;
     }
