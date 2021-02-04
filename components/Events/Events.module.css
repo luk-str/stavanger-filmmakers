@@ -13,6 +13,7 @@
 
 .header {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .date {
@@ -38,4 +39,10 @@
 
 .list li:hover {
   opacity: 0.8;
+}
+
+.noEvents {
+  margin: 1rem 0.5rem 3rem;
+  text-align: center;
+  color: #999;
 }
