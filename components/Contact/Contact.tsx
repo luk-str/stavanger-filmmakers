@@ -5,27 +5,28 @@ import type { ContactInfo } from "../../shared/types";
 const Contact = ({ contactInfo }: { contactInfo: ContactInfo }) => {
   return (
     <footer>
-      <h4 className={styles.header}>{contactInfo.header}</h4>
+      <h4>{contactInfo.header}</h4>
 
       <article className={styles.main__container}>
         <section>
           <p className={styles.link__container}>
             <a
               href="https://www.facebook.com/groups/StavangerFilmmakers"
-              title="Stavanger Filmmakers Club Facebook Group"
-              className={`${styles.link} ${styles.link__email}`}
-              target="blank"
+              title="Stavanger Filmmakers Club Facebook Group. Opens in new tab"
+              className={styles.link}
+              target="_blank"
               rel="noreferrer noopener"
             >
               <FiFacebook className={styles.icon} />
               facebook group
             </a>
           </p>
+
           <p className={styles.link__container}>
             <a
               href={`mailto:${contactInfo.mail}`}
               title="E-mail Stavanger Filmmakers Club"
-              className={`${styles.link} ${styles.link__email}`}
+              className={styles.link}
             >
               <FiMail className={styles.icon} />
               {contactInfo.mail}
@@ -36,13 +37,14 @@ const Contact = ({ contactInfo }: { contactInfo: ContactInfo }) => {
             <a
               href={`tel:${contactInfo.phone}`}
               title="Call Stavanger Filmmmakers Club"
-              className={`${styles.link} ${styles.link__phone}`}
+              className={styles.link}
             >
               <FiPhone className={styles.icon} />
               {contactInfo.phone}
             </a>
           </p>
         </section>
+
         <section className={styles.developer}>
           <p>
             Code and design by{" "}
