@@ -1,3 +1,10 @@
+.main__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .link__container {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -6,12 +13,12 @@
 }
 
 .link {
+  font-size: 0.7rem;
   text-decoration: none;
   transition: 100ms ease;
 }
 
-.link:hover,
-.link:focus {
+.link:hover {
   opacity: 0.8;
 }
 
@@ -20,4 +27,19 @@
   top: 0.3rem;
   font-size: 1.15rem;
   margin-right: 0.5rem;
+}
+
+.developer p {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+}
+
+.developer a {
+  font-size: 0.7rem;
+  transition: 100ms ease;
+}
+
+.developer a:hover {
+  opacity: 0.8;
 }
