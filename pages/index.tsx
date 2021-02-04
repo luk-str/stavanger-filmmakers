@@ -4,6 +4,7 @@ import {
   getThumbnails,
   getMembers,
   getContactInfo,
+  fetchEvents,
 } from "../shared/lib/sanity";
 
 import Metadata from "../components/Metadata";
@@ -18,6 +19,7 @@ export const Home = ({
   filmThumbnails,
   members,
   contactInfo,
+  events,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
@@ -25,7 +27,7 @@ export const Home = ({
 
       <main>
         <Intro text={introText} />
-        <Events />
+        <Events events={events} />
         <Films filmThumbnails={filmThumbnails} />
         <Members members={members} />
       </main>
@@ -42,6 +44,7 @@ export async function getStaticProps() {
   const filmThumbnails = await getThumbnails();
   const members = await getMembers();
   const contactInfo = await getContactInfo();
+  const events = await fetchEvents();
 
   return {
     props: {
@@ -49,6 +52,7 @@ export async function getStaticProps() {
       filmThumbnails,
       members,
       contactInfo,
+      events,
     },
     revalidate: 1,
   };
