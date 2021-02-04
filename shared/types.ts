@@ -32,6 +32,6 @@ export type ContactInfo = {
 export type Event = {
   title: string;
   place: string;
-  date: Date;
+  date: string;
   link: string;
 };
