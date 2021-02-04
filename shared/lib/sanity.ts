@@ -73,6 +73,6 @@ export const getMemberBySlug = (slug: string): Promise<Member> => {
 
 export const fetchEvents = (): Promise<Event[]> => {
   const dateNow = new Date().toISOString();
-  const query = `*[_type == "event" && date >= ${dateNow}]{title, place, date, link}`;
+  const query = `*[_type == "event" && date >= "${dateNow}"]{title, place, date, link}`;
   return fetchFromSanity(query);
 };
