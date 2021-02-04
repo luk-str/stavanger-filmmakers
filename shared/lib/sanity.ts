@@ -1,7 +1,7 @@
 import sanityClient, { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { FilmItem, Member, ContactInfo } from "../types";
+import { FilmItem, Member, ContactInfo, Event } from "../types";
 
 const client = sanityClient({
   projectId: "buq8gsbj",
@@ -68,5 +68,11 @@ export const getMemberSlugs = (): Promise<{ slug: string }[]> => {
 
 export const getMemberBySlug = (slug: string): Promise<Member> => {
   const query = `*[_type == "person" && slug.current == "${slug}"] { name, role, bio, image, "links": links[]{websiteName, url} }[0]`;
+  return fetchFromSanity(query);
+};
+
+export const fetchEvents = (): Promise<Event[]> => {
+  const dateNow = new Date().toISOString();
+  const query = `*[_type == "event" && date >= ${dateNow}]{title, place, date, link}`;
   return fetchFromSanity(query);
 };
