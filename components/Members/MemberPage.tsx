@@ -74,7 +74,7 @@ const MemberPage = ({ member }: { member: Member }) => {
                     href={link.url}
                     title={`Link to ${member.name}'s ${link.websiteName}. Opens in new tab`}
                     rel="noreferrer noopener"
-                    target="blank"
+                    target="_blank"
                   >
                     {getIconForLink(link.websiteName)}
                   </a>
