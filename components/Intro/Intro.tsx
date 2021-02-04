@@ -6,17 +6,16 @@ const Intro = ({ text }) => {
   return (
     <header className={styles.container}>
       <h1 className={styles.title}>
-        {" "}
         Stavanger
         <br /> Filmmakers <br />
-        Club{" "}
+        Club
       </h1>
 
       <section className={styles.text__container}>
         <BlockContent blocks={text} />
 
         <Link href="/fullstory">
-          <a className={styles.link}>Here's the full story.</a>
+          <a className={styles.link}>Here's our story.</a>
         </Link>
       </section>
     </header>
