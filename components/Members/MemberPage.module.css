@@ -65,13 +65,16 @@
 }
 
 .links__item {
-  transition: 100ms;
-  cursor: pointer;
   padding: 1rem 1rem;
 }
 
-.links__item:hover,
-.links__item:focus {
+.links__item a {
+  display: block;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.links__item a:hover {
   opacity: 0.8;
   transform: scale(1.1);
 }
