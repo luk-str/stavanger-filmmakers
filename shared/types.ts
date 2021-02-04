@@ -28,3 +28,10 @@ export type ContactInfo = {
   mail: string;
   phone: string;
 };
+
+export type Event = {
+  title: string;
+  place: string;
+  date: Date;
+  link: string;
+};
