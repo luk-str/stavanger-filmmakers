@@ -79,3 +79,8 @@ a {
 ul {
   list-style-type: circle;
 }
+
+.fullHeight {
+  min-height: 80vh;
+
+}
