@@ -23,7 +23,7 @@ export const getWebsiteIntro = (): Promise<SanityDocument> => {
   return fetchFromSanity(query);
 };
 
-export const getFullStory = (): Promise<SanityDocument> => {
+export const fetchOurStory = (): Promise<SanityDocument> => {
   const query = `*[_type == "websiteContent" && contentTag == "fullStory"].content[0]`;
   return fetchFromSanity(query);
 };

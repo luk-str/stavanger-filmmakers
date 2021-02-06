@@ -14,8 +14,8 @@ const Intro = ({ text }) => {
       <section className={styles.text__container}>
         <BlockContent blocks={text} />
 
-        <Link href="/fullstory">
-          <a className={styles.link}>Here's our story.</a>
+        <Link href="/ourstory">
+          <a className={styles.link}>Here's our story</a>
         </Link>
       </section>
     </header>

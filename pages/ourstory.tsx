@@ -1,9 +1,13 @@
+import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Contact from "../components/Contact/Contact";
-import FullStory from "../components/FullStory/FullStory";
-import { getContactInfo, getFullStory } from "../shared/lib/sanity";
+import OurStory from "../components/FullStory/OurStory";
+import { getContactInfo, fetchOurStory } from "../shared/lib/sanity";
 
-export const FullStoryPage = ({ fullStoryText, contactInfo }) => {
+export const FullStoryPage = ({
+  ourStoryText,
+  contactInfo,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -11,7 +15,7 @@ export const FullStoryPage = ({ fullStoryText, contactInfo }) => {
       </Head>
 
       <main>
-        <FullStory text={fullStoryText} />
+        <OurStory text={ourStoryText} />
       </main>
 
       <Contact contactInfo={contactInfo} />
@@ -22,12 +26,12 @@ export const FullStoryPage = ({ fullStoryText, contactInfo }) => {
 export default FullStoryPage;
 
 export async function getStaticProps() {
-  const fullStoryText = await getFullStory();
+  const ourStoryText = await fetchOurStory();
   const contactInfo = await getContactInfo();
 
   return {
     props: {
-      fullStoryText,
+      ourStoryText,
       contactInfo,
     },
     revalidate: 1,

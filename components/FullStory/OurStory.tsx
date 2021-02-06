@@ -1,9 +1,9 @@
 import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
-import styles from "./FullStory.module.css";
+import styles from "./OurStory.module.css";
 import { FiCornerDownLeft } from "react-icons/fi";
 
-const FullStory = ({ text }) => {
+const OurStory = ({ text }) => {
   return (
     <>
       <Link href="/">
@@ -14,7 +14,7 @@ const FullStory = ({ text }) => {
       </Link>
 
       <article className={styles.container}>
-        <h1>The Full Story</h1>
+        <h1>Our Story</h1>
 
         <BlockContent blocks={text} />
       </article>
@@ -22,4 +22,4 @@ const FullStory = ({ text }) => {
   );
 };
 
-export default FullStory;
+export default OurStory;
