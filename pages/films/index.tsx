@@ -1,16 +1,21 @@
 import Metadata from "../../components/Metadata";
 import Films from "../../components/Films/Films";
-import { getThumbnails } from "../../shared/lib/sanity";
-import type { FilmItem } from "../../shared/types";
+import { getContactInfo, getThumbnails } from "../../shared/lib/sanity";
+import Contact from "../../components/Contact/Contact";
+import { InferGetStaticPropsType } from "next";
 
-type Props = {
-  filmThumbnails: FilmItem[];
-};
-
-export const FilmsIndex = ({ filmThumbnails }) => (
+export const FilmsIndex = ({
+  filmThumbnails,
+  contactInfo,
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
   <>
     <Metadata />
-    <Films filmThumbnails={filmThumbnails} />
+
+    <main className="fullHeight">
+      <Films filmThumbnails={filmThumbnails} />
+    </main>
+
+    <Contact contactInfo={contactInfo} />
   </>
 );
 
@@ -18,10 +23,12 @@ export default FilmsIndex;
 
 export async function getStaticProps() {
   const filmThumbnails = await getThumbnails();
+  const contactInfo = await getContactInfo();
 
   return {
     props: {
       filmThumbnails,
+      contactInfo,
     },
     revalidate: 1,
   };
