@@ -11,6 +11,7 @@ const client = sanityClient({
 });
 
 const builder = imageUrlBuilder(client);
+
 const fetchFromSanity = async (query: string) => {
   return client
     .fetch(query)
@@ -18,7 +19,7 @@ const fetchFromSanity = async (query: string) => {
     .catch((err) => console.log(err));
 };
 
-export const getWebsiteIntro = (): Promise<SanityDocument> => {
+export const fetchWebsiteIntro = (): Promise<SanityDocument> => {
   const query = `*[_type == "websiteContent" && contentTag == "intro"].content[0]`;
   return fetchFromSanity(query);
 };
@@ -28,7 +29,7 @@ export const fetchOurStory = (): Promise<SanityDocument> => {
   return fetchFromSanity(query);
 };
 
-export const getContactInfo = async (): Promise<ContactInfo> => {
+export const fetchContactInfo = async (): Promise<ContactInfo> => {
   const query = `*[_type == "contactInfo"]{contentTag, content}`;
   const data = await fetchFromSanity(query);
   let result = {};
@@ -39,34 +40,34 @@ export const getContactInfo = async (): Promise<ContactInfo> => {
   return result as ContactInfo;
 };
 
-export const getThumbnails = (): Promise<FilmItem[]> => {
+export const fetchThumbnails = (): Promise<FilmItem[]> => {
   const query = `*[_type == "film"] | order(releaseDate desc) { title, genre, "slug": slug.current, "image" : poster }`;
   return fetchFromSanity(query);
 };
 
 export const urlFor = (source: SanityImageSource) => builder.image(source);
 
-export const getMembers = (): Promise<Member[]> => {
+export const fetchMembers = (): Promise<Member[]> => {
   const query = `*[_type == "person"] { name, role, "slug": slug.current, image, bio } | order(_createdAt asc)`;
   return fetchFromSanity(query);
 };
 
-export const getFilmSlugs = (): Promise<{ slug: string }[]> => {
+export const fetchFilmSlugs = (): Promise<{ slug: string }[]> => {
   const query = `*[_type == "film"] { "slug": slug.current }`;
   return fetchFromSanity(query);
 };
 
-export const getFilmBySlug = (slug: string): Promise<FilmItem> => {
+export const fetchFilmBySlug = (slug: string): Promise<FilmItem> => {
   const query = `*[_type == "film" && slug.current == "${slug}"] { title, genre, description, castMembers, crewMembers, videoLink, externalLink, "slug": slug.current, "image" : poster, releaseDate }[0]`;
   return fetchFromSanity(query);
 };
 
-export const getMemberSlugs = (): Promise<{ slug: string }[]> => {
+export const fetchMemberSlugs = (): Promise<{ slug: string }[]> => {
   const query = `*[_type == "person"] {"slug": slug.current}`;
   return fetchFromSanity(query);
 };
 
-export const getMemberBySlug = (slug: string): Promise<Member> => {
+export const fetchMemberBySlug = (slug: string): Promise<Member> => {
   const query = `*[_type == "person" && slug.current == "${slug}"] { name, role, bio, image, "links": links[]{websiteName, url} }[0]`;
   return fetchFromSanity(query);
 };

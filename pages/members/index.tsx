@@ -1,6 +1,6 @@
 import Metadata from "../../components/Metadata";
 import Members from "../../components/Members/Members";
-import { getContactInfo, getMembers } from "../../shared/lib/sanity";
+import { fetchContactInfo, fetchMembers } from "../../shared/lib/sanity";
 import Contact from "../../components/Contact/Contact";
 import { InferGetStaticPropsType } from "next";
 
@@ -22,8 +22,8 @@ export const MembersIndex = ({
 export default MembersIndex;
 
 export async function getStaticProps() {
-  const members = await getMembers();
-  const contactInfo = await getContactInfo();
+  const members = await fetchMembers();
+  const contactInfo = await fetchContactInfo();
 
   return {
     props: {

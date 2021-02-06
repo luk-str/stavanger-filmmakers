@@ -1,9 +1,9 @@
 import { InferGetStaticPropsType } from "next";
 import {
-  getWebsiteIntro,
-  getThumbnails,
-  getMembers,
-  getContactInfo,
+  fetchWebsiteIntro,
+  fetchThumbnails,
+  fetchMembers,
+  fetchContactInfo,
   fetchEvents,
 } from "../shared/lib/sanity";
 
@@ -40,10 +40,10 @@ export const Home = ({
 export default Home;
 
 export async function getStaticProps() {
-  const introText = await getWebsiteIntro();
-  const filmThumbnails = await getThumbnails();
-  const members = await getMembers();
-  const contactInfo = await getContactInfo();
+  const introText = await fetchWebsiteIntro();
+  const filmThumbnails = await fetchThumbnails();
+  const members = await fetchMembers();
+  const contactInfo = await fetchContactInfo();
   const events = await fetchEvents();
 
   return {

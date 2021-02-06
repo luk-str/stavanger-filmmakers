@@ -2,9 +2,9 @@ import Metadata from "../../components/Metadata";
 import Head from "next/head";
 import { InferGetStaticPropsType } from "next";
 import {
-  getMemberSlugs,
-  getMemberBySlug,
-  getContactInfo,
+  fetchMemberSlugs,
+  fetchMemberBySlug,
+  fetchContactInfo,
 } from "../../shared/lib/sanity";
 import MemberPage from "../../components/Members/MemberPage";
 import Contact from "../../components/Contact/Contact";
@@ -28,7 +28,7 @@ const Member = ({
 };
 
 export async function getStaticPaths() {
-  const slugs = await getMemberSlugs();
+  const slugs = await fetchMemberSlugs();
 
   const paths = slugs.map((item) => ({
     params: { slug: item.slug },
@@ -41,8 +41,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const member = await getMemberBySlug(params.slug);
-  const contactInfo = await getContactInfo();
+  const member = await fetchMemberBySlug(params.slug);
+  const contactInfo = await fetchContactInfo();
 
   return {
     props: { member, contactInfo },

@@ -1,6 +1,6 @@
 import Metadata from "../../components/Metadata";
 import Films from "../../components/Films/Films";
-import { getContactInfo, getThumbnails } from "../../shared/lib/sanity";
+import { fetchContactInfo, fetchThumbnails } from "../../shared/lib/sanity";
 import Contact from "../../components/Contact/Contact";
 import { InferGetStaticPropsType } from "next";
 
@@ -22,8 +22,8 @@ export const FilmsIndex = ({
 export default FilmsIndex;
 
 export async function getStaticProps() {
-  const filmThumbnails = await getThumbnails();
-  const contactInfo = await getContactInfo();
+  const filmThumbnails = await fetchThumbnails();
+  const contactInfo = await fetchContactInfo();
 
   return {
     props: {

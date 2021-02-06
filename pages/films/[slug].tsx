@@ -1,8 +1,8 @@
 import { InferGetStaticPropsType } from "next";
 import {
-  getContactInfo,
-  getFilmBySlug,
-  getFilmSlugs,
+  fetchContactInfo,
+  fetchFilmBySlug,
+  fetchFilmSlugs,
 } from "../../shared/lib/sanity";
 import FilmPage from "../../components/Films/FilmPage";
 import Metadata from "../../components/Metadata";
@@ -28,7 +28,7 @@ const Film = ({
 };
 
 export async function getStaticPaths() {
-  const slugs = await getFilmSlugs();
+  const slugs = await fetchFilmSlugs();
 
   const paths = slugs.map((item) => ({
     params: { slug: item.slug },
@@ -41,8 +41,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const film = await getFilmBySlug(params.slug);
-  const contactInfo = await getContactInfo();
+  const film = await fetchFilmBySlug(params.slug);
+  const contactInfo = await fetchContactInfo();
 
   return {
     props: { film, contactInfo },
