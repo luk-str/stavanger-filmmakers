@@ -1,7 +1,6 @@
 import Metadata from "../../components/Metadata";
 import Members from "../../components/Members/Members";
 import { getContactInfo, getMembers } from "../../shared/lib/sanity";
-import type { Member } from "../../shared/types";
 import Contact from "../../components/Contact/Contact";
 import { InferGetStaticPropsType } from "next";
 
