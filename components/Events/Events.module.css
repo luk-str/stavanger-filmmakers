@@ -25,6 +25,7 @@
 
 .list {
   padding: 0;
+  width: 85%;
   list-style-type: disc;
 }
 
