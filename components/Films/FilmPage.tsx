@@ -7,7 +7,7 @@ import { FiCornerDownLeft } from "react-icons/fi";
 
 const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
-    <>
+    <div className={styles.pageHeight}>
       <section className={styles.videoContainer}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${extractYoutubeId(
@@ -42,7 +42,7 @@ const FilmPage = ({ film }: { film: FilmItem }) => {
           </section>
         </article>
       </main>
-    </>
+    </div>
   );
 };
 

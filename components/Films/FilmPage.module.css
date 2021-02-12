@@ -14,8 +14,11 @@
 }
 
 .container__main {
-  min-height: 30vh;
   padding-top: 1em;
+}
+
+.pageHeight {
+  min-height: 80vh;
 }
 
 .link {
