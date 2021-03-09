@@ -3,41 +3,10 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import { urlFor } from "../../shared/lib/sanity";
 import type { Member } from "../../shared/types";
-import { FiCornerDownLeft, FiInstagram, FiLink } from "react-icons/fi";
-import {
-  SiFacebook,
-  SiImdb,
-  SiLinkedin,
-  SiSpotify,
-  SiTwitter,
-  SiVimeo,
-  SiYoutube,
-} from "react-icons/si";
+import { FiCornerDownLeft } from "react-icons/fi";
+import WebsiteIconLink from "../common/WebsiteIconLink";
 
 const MemberPage = ({ member }: { member: Member }) => {
-  function getIconForLink(websiteName: string): JSX.Element {
-    switch (websiteName) {
-      case "imdb":
-        return <SiImdb />;
-      case "youtube":
-        return <SiYoutube />;
-      case "spotify":
-        return <SiSpotify />;
-      case "linkedin":
-        return <SiLinkedin />;
-      case "instagram":
-        return <FiInstagram />;
-      case "facebook":
-        return <SiFacebook />;
-      case "twitter":
-        return <SiTwitter />;
-      case "vimeo":
-        return <SiVimeo />;
-      default:
-        return <FiLink />;
-    }
-  }
-
   return (
     <main>
       <Link href="/#members">
@@ -70,14 +39,7 @@ const MemberPage = ({ member }: { member: Member }) => {
             <ul className={styles.links__container}>
               {member.links.map((link, index) => (
                 <li key={index} className={styles.links__item}>
-                  <a
-                    href={link.url}
-                    title={`Link to ${member.name}'s ${link.websiteName}. Opens in new tab`}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {getIconForLink(link.websiteName)}
-                  </a>
+                  <WebsiteIconLink link={link} title={member.name} />
                 </li>
               ))}
             </ul>

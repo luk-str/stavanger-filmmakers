@@ -8,10 +8,10 @@ export type FilmItem = {
   castMembers?: SanityDocument[];
   crewMembers?: SanityDocument[];
   videoLink?: string;
-  externalLink?: string;
   image: SanityImageSource;
   slug: string;
   releaseDate: Date;
+  links?: WebsiteLink;
 };
 
 export type Member = {
@@ -20,7 +20,7 @@ export type Member = {
   image: SanityImageSource;
   bio: SanityDocument;
   slug: string;
-  links: { websiteName: string; url: string }[];
+  links: WebsiteLink[];
 };
 
 export type ContactInfo = {
@@ -34,4 +34,9 @@ export type Event = {
   place: string;
   date: string;
   link: string;
+};
+
+export type WebsiteLink = {
+  websiteName: string;
+  url: string;
 };
