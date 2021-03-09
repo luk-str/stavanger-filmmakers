@@ -4,6 +4,7 @@ import { extractYoutubeId } from "../../shared/lib/video";
 import styles from "./FilmPage.module.css";
 import type { FilmItem } from "../../shared/types";
 import { FiCornerDownLeft } from "react-icons/fi";
+import WebsiteIconLink from "../common/WebsiteIconLink";
 
 const FilmPage = ({ film }: { film: FilmItem }) => {
   return (
@@ -40,6 +41,20 @@ const FilmPage = ({ film }: { film: FilmItem }) => {
           <section className={styles.description}>
             <BlockContent blocks={film.description} />
           </section>
+
+          {film.links && (
+            <section>
+              <h3 className={styles.links__header}>other websites</h3>
+
+              <ul className={styles.links__container}>
+                {film.links.map((link, index) => (
+                  <li key={index} className={styles.links__item}>
+                    <WebsiteIconLink link={link} title={film.title} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </article>
       </main>
     </div>

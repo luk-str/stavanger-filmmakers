@@ -57,3 +57,37 @@
 .description {
   margin: 2rem 0 5rem;
 }
+
+.links__header {
+  color: var(--accent_color);
+  text-align: center;
+  margin: 2rem 0 0.5rem;
+}
+
+.links__container {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.links__item {
+  padding: 1rem 1rem;
+}
+
+.links__item a {
+  display: block;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.links__item a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.links__item svg {
+  font-size: 2rem;
+}

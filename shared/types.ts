@@ -11,7 +11,7 @@ export type FilmItem = {
   image: SanityImageSource;
   slug: string;
   releaseDate: Date;
-  links?: WebsiteLink;
+  links?: WebsiteLink[];
 };
 
 export type Member = {

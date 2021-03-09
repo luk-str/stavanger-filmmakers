@@ -58,7 +58,7 @@ export const fetchFilmSlugs = (): Promise<{ slug: string }[]> => {
 };
 
 export const fetchFilmBySlug = (slug: string): Promise<FilmItem> => {
-  const query = `*[_type == "film" && slug.current == "${slug}"] { title, genre, description, castMembers, crewMembers, videoLink, externalLink, "slug": slug.current, "image" : poster, releaseDate }[0]`;
+  const query = `*[_type == "film" && slug.current == "${slug}"] { title, genre, description, castMembers, crewMembers, videoLink, "slug": slug.current, "image" : poster, releaseDate, "links": links[]{websiteName, url} }[0]`;
   return fetchFromSanity(query);
 };
 
